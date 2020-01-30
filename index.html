@@ -44,20 +44,20 @@
       // maxLevel: 4,
       // subMaxLevel: 2,
       // name: 'docsify',
-      // search: {
-      //   noData: {
-      //     '/de-de/': 'Keine Ergebnisse!',
-      //     '/zh-cn/': '没有结果!',
-      //     '/': 'No results!'
-      //   },
-      //   paths: 'auto',
-      //   placeholder: {
-      //     '/de-de/': 'Suche',
-      //     '/zh-cn/': '搜索',
-      //     '/': 'Search'
-      //   },
-      //   hideOtherSidebarContent: false,
-      // },
+      search: 'auto', // default
+
+      // complete configuration parameters
+      search: {
+        maxAge: 86400000, // Expiration time, the default one day
+        paths: 'auto',
+        placeholder: 'Type to search',
+        noData: 'No Results!',
+        // Headline depth, 1 - 6
+        depth: 6,
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+
+      },
+      executeScript: true,
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       plugins: [
         function (hook, vm) {
@@ -94,7 +94,9 @@
       ]
     }
   </script>
-  <script src="//unpkg.com/docsify/lib/docsify.js"></script>
+  <!-- <script src="//unpkg.com/docsify/lib/docsify.js"></script> -->
+  <script src="./src/plugins/search/docsify.js"></script>
+  <script src="./src/plugins/search/search.js"></script>
   <!-- <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script> -->
   <!-- <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
