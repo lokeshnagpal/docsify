@@ -394,7 +394,7 @@
         '') +
       '<div class="sidebar-nav"><!--sidebar--></div>' +
       '</aside>'
-    var search = '<div class="mainsearch" style="padding-top: 20px;position: absolute;left:300px;width: 300px"></div>'
+    var search = '<div class="mainsearch"></div>'
     return (
       // (isMobile ? (aside + "<main>") : ("<main>" + aside)) +   
       // '<section class="content">' +
