@@ -26,22 +26,22 @@
      * Simple Object.assign polyfill
      */
   var merge =
-        Object.assign ||
-        function (to) {
-          var arguments$1 = arguments
+    Object.assign ||
+    function (to) {
+      var arguments$1 = arguments
 
-          for (var i = 1; i < arguments.length; i++) {
-            var from = Object(arguments$1[i])
+      for (var i = 1; i < arguments.length; i++) {
+        var from = Object(arguments$1[i])
 
-            for (var key in from) {
-              if (hasOwn.call(from, key)) {
-                to[key] = from[key]
-              }
-            }
+        for (var key in from) {
+          if (hasOwn.call(from, key)) {
+            to[key] = from[key]
           }
-
-          return to
         }
+      }
+
+      return to
+    }
 
   /**
      * Check if value is primitive
@@ -116,12 +116,12 @@
     )
 
     var script =
-            document.currentScript ||
-            [].slice
-              .call(document.getElementsByTagName('script'))
-              .filter(function (n) {
-                return /docsify\./.test(n.src)
-              })[0]
+      document.currentScript ||
+      [].slice
+        .call(document.getElementsByTagName('script'))
+        .filter(function (n) {
+          return /docsify\./.test(n.src)
+        })[0]
 
     if (script) {
       for (var prop in config) {
@@ -219,18 +219,18 @@
      */
   var supportsPushState =
 
-        (function () {
-          // Borrowed wholesale from https://github.com/defunkt/jquery-pjax
-          return (
-            window.history &&
-                window.history.pushState &&
-                window.history.replaceState &&
-                // PushState isn’t reliable on iOS until 5.
-                !navigator.userAgent.match(
-                  /((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/
-                )
-          )
-        })()
+    (function () {
+      // Borrowed wholesale from https://github.com/defunkt/jquery-pjax
+      return (
+        window.history &&
+        window.history.pushState &&
+        window.history.replaceState &&
+        // PushState isn’t reliable on iOS until 5.
+        !navigator.userAgent.match(
+          /((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/
+        )
+      )
+    })()
 
   var cacheNode = {}
 
@@ -365,12 +365,12 @@
 
     return (
       '<a href="' + data + '" target="' + cornerExternalLinkTarge + '" class="github-corner" aria-label="View source on Github">' +
-            '<svg viewBox="0 0 250 250" aria-hidden="true">' +
-            '<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>' +
-            '<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>' +
-            '<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>' +
-            '</svg>' +
-            '</a>'
+      '<svg viewBox="0 0 250 250" aria-hidden="true">' +
+      '<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>' +
+      '<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>' +
+      '<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>' +
+      '</svg>' +
+      '</a>'
     )
   }
 
@@ -381,35 +381,33 @@
     var name = config.name ? escapeString(config.name) : ''
 
     var aside =
-            '<button class="sidebar-toggle" aria-label="Menu">' +
-            '<div class="sidebar-toggle-button">' +
-            '<span></span><span></span><span></span>' +
-            '</div>' +
-            '</button>' +
-            '<aside class="sidebar">' +
-            (config.name ?
-              ('<h1 class="app-name"><a class="app-name-link" data-nosearch>' + (config.logo ?
-                ('<img alt="' + name + '" src=' + (config.logo) + '>') :
-                name) + '</a></h1>') :
-              '') +
-            '<div class="sidebar-nav"><!--sidebar--></div>' +
-            '</aside>'
-    var search = '<div class="mainsearch" style="padding-top: 60px;position: absolute;left:924px;width: 300px"></div>'
+      '<button class="sidebar-toggle" aria-label="Menu">' +
+      '<div class="sidebar-toggle-button">' +
+      '<span></span><span></span><span></span>' +
+      '</div>' +
+      '</button>' +
+      '<aside class="sidebar">' +
+      (config.name ?
+        ('<h1 class="app-name"><a class="app-name-link" data-nosearch>' + (config.logo ?
+          ('<img alt="' + name + '" src=' + (config.logo) + '>') :
+          name) + '</a></h1>') :
+        '') +
+      '<div class="sidebar-nav"><!--sidebar--></div>' +
+      '</aside>'
+    var search = '<div class="mainsearch" style="padding-top: 20px;position: absolute;left:300px;width: 300px"></div>'
     return (
-    // (isMobile ? (aside + "<main>") : ("<main>" + aside)) +
-    // '<div class="mainsearch" style="padding-top: 60px;position: absolute;left:924px;width: 300px"></div>' +
-    // '<section class="content">' +
-    // '<article class="markdown-section"><!--main--></article>' +
-    // '</section>' +
-    // '</main>'
+      // (isMobile ? (aside + "<main>") : ("<main>" + aside)) +   
+      // '<section class="content">' +
+      // '<article class="markdown-section"><!--main--></article>' +
+      // '</section>' +
+      // '</main>'
 
       (isMobile ? (aside + '<main>') : ('<main>' + aside)) +
-
-            '<section class="content">' +
-            '<article class="markdown-section"><!--main--></article>' +
-            '</section>' +
-            search +
-            '</main>'
+      '<section class="content">' +
+      '<article class="markdown-section"><!--main--></article>' +
+      '</section>' +
+      search +
+      '</main>'
 
     )
   }
@@ -420,15 +418,15 @@
   function cover() {
     var SL = ', 100%, 85%'
     var bgc =
-            'linear-gradient(to left bottom, ' +
-            'hsl(' + (Math.floor(Math.random() * 255) + SL) + ') 0%,' +
-            'hsl(' + (Math.floor(Math.random() * 255) + SL) + ') 100%)'
+      'linear-gradient(to left bottom, ' +
+      'hsl(' + (Math.floor(Math.random() * 255) + SL) + ') 0%,' +
+      'hsl(' + (Math.floor(Math.random() * 255) + SL) + ') 100%)'
 
     return (
       '<section class="cover show" style="background: ' + bgc + '">' +
-            '<div class="cover-main"><!--cover--></div>' +
-            '<div class="mask"></div>' +
-            '</section>'
+      '<div class="cover-main"><!--cover--></div>' +
+      '<div class="mask"></div>' +
+      '</section>'
     )
   }
 
@@ -535,9 +533,11 @@
     var cached = cache[url]
 
     if (cached) {
-      return { then: function (cb) {
-        return cb(cached.content, cached.opt)
-      }, abort: noop }
+      return {
+        then: function (cb) {
+          return cb(cached.content, cached.opt)
+        }, abort: noop
+      }
     }
 
     xhr.open('GET', url)
@@ -695,15 +695,15 @@
         blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
         list: /^( {0,3})(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
         html: '^ {0,3}(?:' + // Optional indentation
-                    '<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)' + // (1)
-                    '|comment[^\\n]*(\\n+|$)' + // (2)
-                    '|<\\?[\\s\\S]*?\\?>\\n*' + // (3)
-                    '|<![A-Z][\\s\\S]*?>\\n*' + // (4)
-                    '|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>\\n*' + // (5)
-                    '|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)' + // (6)
-                    '|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' + // (7) open tag
-                    '|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' + // (7) closing tag
-                    ')',
+          '<(script|pre|style)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)' + // (1)
+          '|comment[^\\n]*(\\n+|$)' + // (2)
+          '|<\\?[\\s\\S]*?\\?>\\n*' + // (3)
+          '|<![A-Z][\\s\\S]*?>\\n*' + // (4)
+          '|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>\\n*' + // (5)
+          '|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:\\n{2,}|$)' + // (6)
+          '|<(?!script|pre|style)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' + // (7) open tag
+          '|</(?!script|pre|style)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:\\n{2,}|$)' + // (7) closing tag
+          ')',
         def: /^ {0,3}\[(label)\]: *\n? *<?([^\s>]+)>?(?:(?: +\n? *| *\n *)(title))? *(?:\n+|$)/,
         nptable: noop,
         table: noop,
@@ -734,11 +734,11 @@
         .getRegex()
 
       block._tag = 'address|article|aside|base|basefont|blockquote|body|caption' +
-                '|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption' +
-                '|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe' +
-                '|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option' +
-                '|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr' +
-                '|track|ul'
+        '|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption' +
+        '|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe' +
+        '|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option' +
+        '|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr' +
+        '|track|ul'
       block._comment = /<!--(?!-?>)[\s\S]*?-->/
       block.html = edit(block.html, 'i')
         .replace('comment', block._comment)
@@ -783,13 +783,13 @@
       block.pedantic = merge({}, block.normal, {
         html: edit(
           '^ *(?:comment *(?:\\n|\\s*$)' +
-                    '|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)' + // Closed tag
-                    '|<tag(?:"[^"]*"|\'[^\']*\'|\\s[^\'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))')
+          '|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)' + // Closed tag
+          '|<tag(?:"[^"]*"|\'[^\']*\'|\\s[^\'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))')
           .replace('comment', block._comment)
           .replace(/tag/g, '(?!(?:' +
-                        'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub' +
-                        '|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)' +
-                        '\\b)\\w+(?!:|[^\\w\\s@]*@)\\b')
+            'a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub' +
+            '|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)' +
+            '\\b)\\w+(?!:|[^\\w\\s@]*@)\\b')
           .getRegex(),
         def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
         heading: /^ *(#{1,6}) *([^\n]+?) *(?:#+ *)?(?:\n+|$)/,
@@ -1108,7 +1108,7 @@
                 'paragraph' :
                 'html',
               pre: !this.options.sanitizer &&
-                                (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
+                (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
               text: this.options.sanitize ? (this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0])) : cap[0]
             })
             continue
@@ -1219,11 +1219,11 @@
         autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
         url: noop,
         tag: '^comment' +
-                    '|^</[a-zA-Z][\\w:-]*\\s*>' + // Self-closing tag
-                    '|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>' + // Open tag
-                    '|^<\\?[\\s\\S]*?\\?>' + // Processing instruction, e.g. <?php ?>
-                    '|^<![a-zA-Z]+\\s[\\s\\S]*?>' + // Declaration, e.g. <!DOCTYPE html>
-                    '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>', // CDATA section
+          '|^</[a-zA-Z][\\w:-]*\\s*>' + // Self-closing tag
+          '|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>' + // Open tag
+          '|^<\\?[\\s\\S]*?\\?>' + // Processing instruction, e.g. <?php ?>
+          '|^<![a-zA-Z]+\\s[\\s\\S]*?>' + // Declaration, e.g. <!DOCTYPE html>
+          '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>', // CDATA section
         link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
         reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
         nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
@@ -1441,7 +1441,7 @@
 
           // Reflink, nolink
           if ((cap = this.rules.reflink.exec(src)) ||
-                        (cap = this.rules.nolink.exec(src))) {
+            (cap = this.rules.nolink.exec(src))) {
             src = src.substring(cap[0].length)
             link = (cap[2] || cap[1]).replace(/\s+/g, ' ')
             link = this.links[link.toLowerCase()]
@@ -1579,19 +1579,19 @@
         }
 
         return text
-        // Em-dashes
+          // Em-dashes
           .replace(/---/g, '\u2014')
-        // En-dashes
+          // En-dashes
           .replace(/--/g, '\u2013')
-        // Opening singles
+          // Opening singles
           .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1\u2018')
-        // Closing singles & apostrophes
+          // Closing singles & apostrophes
           .replace(/'/g, '\u2019')
-        // Opening doubles
+          // Opening doubles
           .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, '$1\u201c')
-        // Closing doubles
+          // Closing doubles
           .replace(/"/g, '\u201d')
-        // Ellipses
+          // Ellipses
           .replace(/\.{3}/g, '\u2026')
       }
 
@@ -1641,16 +1641,16 @@
 
         if (!lang) {
           return '<pre><code>' +
-                        (escaped ? code : escape(code, true)) +
-                        '</code></pre>'
+            (escaped ? code : escape(code, true)) +
+            '</code></pre>'
         }
 
         return '<pre><code class="' +
-                    this.options.langPrefix +
-                    escape(lang, true) +
-                    '">' +
-                    (escaped ? code : escape(code, true)) +
-                    '</code></pre>\n'
+          this.options.langPrefix +
+          escape(lang, true) +
+          '">' +
+          (escaped ? code : escape(code, true)) +
+          '</code></pre>\n'
       }
 
       Renderer.prototype.blockquote = function (quote) {
@@ -1664,15 +1664,15 @@
       Renderer.prototype.heading = function (text, level, raw, slugger) {
         if (this.options.headerIds) {
           return '<h' +
-                        level +
-                        ' id="' +
-                        this.options.headerPrefix +
-                        slugger.slug(raw) +
-                        '">' +
-                        text +
-                        '</h' +
-                        level +
-                        '>\n'
+            level +
+            ' id="' +
+            this.options.headerPrefix +
+            slugger.slug(raw) +
+            '">' +
+            text +
+            '</h' +
+            level +
+            '>\n'
         }
 
         // ignore IDs
@@ -1695,10 +1695,10 @@
 
       Renderer.prototype.checkbox = function (checked) {
         return '<input ' +
-                    (checked ? 'checked="" ' : '') +
-                    'disabled="" type="checkbox"' +
-                    (this.options.xhtml ? ' /' : '') +
-                    '> '
+          (checked ? 'checked="" ' : '') +
+          'disabled="" type="checkbox"' +
+          (this.options.xhtml ? ' /' : '') +
+          '> '
       }
 
       Renderer.prototype.paragraph = function (text) {
@@ -1711,11 +1711,11 @@
         }
 
         return '<table>\n' +
-                    '<thead>\n' +
-                    header +
-                    '</thead>\n' +
-                    body +
-                    '</table>\n'
+          '<thead>\n' +
+          header +
+          '</thead>\n' +
+          body +
+          '</table>\n'
       }
 
       Renderer.prototype.tablerow = function (content) {
@@ -1795,17 +1795,17 @@
       // No need for block level renderers
 
       TextRenderer.prototype.strong =
-                TextRenderer.prototype.em =
-                TextRenderer.prototype.codespan =
-                TextRenderer.prototype.del =
-                TextRenderer.prototype.text = function (text) {
-                  return text
-                }
+        TextRenderer.prototype.em =
+        TextRenderer.prototype.codespan =
+        TextRenderer.prototype.del =
+        TextRenderer.prototype.text = function (text) {
+          return text
+        }
 
       TextRenderer.prototype.link =
-                TextRenderer.prototype.image = function (href, title, text) {
-                  return String(text)
-                }
+        TextRenderer.prototype.image = function (href, title, text) {
+          return String(text)
+        }
 
       TextRenderer.prototype.br = function () {
         return ''
@@ -2296,7 +2296,7 @@
 
         if (typeof src !== 'string') {
           throw new Error('marked(): input parameter is of type ' +
-                        Object.prototype.toString.call(src) + ', string expected')
+            Object.prototype.toString.call(src) + ', string expected')
         }
 
         if (callback || typeof opt === 'function') {
@@ -2388,8 +2388,8 @@
           e.message += '\nPlease report this to https://github.com/markedjs/marked.'
           if ((opt || marked.defaults).silent) {
             return '<p>An error occurred:</p><pre>' +
-                            escape(String(e.message), true) +
-                            '</pre>'
+              escape(String(e.message), true) +
+              '</pre>'
           }
 
           throw e
@@ -2401,10 +2401,10 @@
              */
 
       marked.options =
-                marked.setOptions = function (opt) {
-                  merge(marked.defaults, opt)
-                  return marked
-                }
+        marked.setOptions = function (opt) {
+          merge(marked.defaults, opt)
+          return marked
+        }
 
       marked.getDefaults = function () {
         return {
@@ -3060,7 +3060,7 @@
     }
 
     Prism.languages.markup.tag.inside['attr-value'].inside.entity =
-            Prism.languages.markup.entity
+      Prism.languages.markup.entity
 
     // Plugin to make entity title show the real entity, idea by Roman Komarov
     Prism.hooks.add('wrap', function (env) {
@@ -3961,8 +3961,8 @@
 
       if (
         !isAbsolutePath(href) &&
-                !_self._matchNotCompileLink(href) &&
-                !config.ignore
+        !_self._matchNotCompileLink(href) &&
+        !config.ignore
       ) {
         if (href === _self.config.homepage) {
           href = 'README'
@@ -4158,13 +4158,13 @@
     })
 
     isMobile &&
-            on(
-              body,
-              'click',
-              function (_) {
-                return body.classList.contains('close') && toggle()
-              }
-            )
+      on(
+        body,
+        'click',
+        function (_) {
+          return body.classList.contains('close') && toggle()
+        }
+      )
   }
 
   function collapse(el) {
@@ -4178,8 +4178,8 @@
 
       if (
         target.nodeName === 'A' &&
-                target.nextSibling &&
-                target.nextSibling.classList.contains('app-sub-sidebar')
+        target.nextSibling &&
+        target.nextSibling.classList.contains('app-sub-sidebar')
       ) {
         toggleClass(target.parentNode, 'collapse')
       }
@@ -4504,7 +4504,7 @@
       var curOffset = 0
       var cur = active.offsetTop + active.clientHeight + 40
       var isInView =
-                active.offsetTop >= wrap.scrollTop && cur <= wrap.scrollTop + height
+        active.offsetTop >= wrap.scrollTop && cur <= wrap.scrollTop + height
       var notThan = cur - curOffset < height
       var top$1 = isInView ? wrap.scrollTop : notThan ? curOffset : cur - height
 
@@ -4624,10 +4624,10 @@
 
               embedToken = compile.lexer(
                 '```' +
-                                token.embed.lang +
-                                '\n' +
-                                text.replace(/`/g, '@DOCSIFY_QM@') +
-                                '\n```\n'
+                token.embed.lang +
+                '\n' +
+                text.replace(/`/g, '@DOCSIFY_QM@') +
+                '\n```\n'
               )
             } else if (token.embed.type === 'mermaid') {
               embedToken = [
@@ -4741,11 +4741,11 @@
 
   function formatUpdated(html, updated, fn) {
     updated =
-            typeof fn === 'function' ?
-              fn(updated) :
-              typeof fn === 'string' ?
-                tinydate(fn)(new Date(updated)) :
-                updated
+      typeof fn === 'function' ?
+        fn(updated) :
+        typeof fn === 'string' ?
+          tinydate(fn)(new Date(updated)) :
+          updated
 
     return html.replace(/{docsify-updated}/g, updated)
   }
@@ -4762,8 +4762,8 @@
     // Execute script
     if (
       this.config.executeScript !== false &&
-            typeof window.Vue !== 'undefined' &&
-            !executeScript()
+      typeof window.Vue !== 'undefined' &&
+      !executeScript()
     ) {
       setTimeout(function (_) {
         var vueVM = window.__EXECUTE_RESULT__
@@ -4813,7 +4813,7 @@
       var activeEl = getAndActive(this.router, '.sidebar-nav', true, true)
       if (loadSidebar && activeEl) {
         activeEl.parentNode.innerHTML +=
-                    this.compiler.subSidebar(subMaxLevel) || ''
+          this.compiler.subSidebar(subMaxLevel) || ''
       } else {
         // Reset toc
         this.compiler.subSidebar()
@@ -5081,7 +5081,7 @@
     if (local) {
       var idIndex = currentRoute.indexOf('?')
       path =
-                (idIndex > 0 ? currentRoute.substring(0, idIndex) : currentRoute) + path
+        (idIndex > 0 ? currentRoute.substring(0, idIndex) : currentRoute) + path
     }
 
     if (this.config.relativePath && path.indexOf('/') !== 0) {
@@ -5443,16 +5443,16 @@
 
       // Load nav
       loadNavbar &&
-                loadNested(
-                  path,
-                  qs,
-                  loadNavbar,
-                  function (text) {
-                    return this$1._renderNav(text)
-                  },
-                  this,
-                  true
-                )
+        loadNested(
+          path,
+          qs,
+          loadNavbar,
+          function (text) {
+            return this$1._renderNav(text)
+          },
+          this,
+          true
+        )
     }
 
     proto._fetchCover = function () {

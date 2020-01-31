@@ -214,7 +214,7 @@
 
   function style() {
     // Var code = "\n.sidebar {\n  padding-top: 0;\n}\n\n.search {\n  margin-bottom: 20px;\n  padding: 6px;\n  border-bottom: 1px solid #eee;\n}\n\n.search .input-wrap {\n  display: flex;\n  align-items: center;\n}\n\n.search .results-panel {\n  display: none;\n}\n\n.search .results-panel.show {\n  display: block;\n}\n\n.search input {\n  outline: none;\n  border: none;\n  width: 100%;\n  padding: 0 7px;\n  line-height: 36px;\n  font-size: 14px;\n  border: 1px solid transparent;\n}\n\n.search input:focus {\n  box-shadow: 0 0 5px var(--theme-color, #42b983);\n  border: 1px solid var(--theme-color, #42b983);\n}\n\n.search input::-webkit-search-decoration,\n.search input::-webkit-search-cancel-button,\n.search input {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n.search .clear-button {\n  width: 36px;\n  text-align: right;\n  display: none;\n}\n\n.search .clear-button.show {\n  display: block;\n}\n\n.search .clear-button svg {\n  transform: scale(.5);\n}\n\n.search h2 {\n  font-size: 17px;\n  margin: 10px 0;\n}\n\n.search a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.search .matching-post {\n  border-bottom: 1px solid #eee;\n}\n\n.search .matching-post:last-child {\n  border-bottom: 0;\n}\n\n.search p {\n  font-size: 14px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n}\n\n.search p.empty {\n  text-align: center;\n}\n\n.app-name.hide, .sidebar-nav.hide {\n  display: none;\n}";
-    var code = '\n.search {\n  margin-bottom: 20px;\n  padding: 6px;\n  border-bottom: 1px solid #eee;\n}\n\n.search .input-wrap {\n  display: flex;\n  align-items: center;\n}\n\n.search .results-panel {\n  display: none;\n}\n\n.search .results-panel.show {\n  display: block;\n}\n\n.search input {\n  outline: none;\n  border: none;\n  width: 100%;\n  padding: 0 7px;\n  line-height: 36px;\n  font-size: 14px;\n  border: 1px solid transparent;\n}\n\n.search input:focus {\n  box-shadow: 0 0 5px var(--theme-color, #42b983);\n  border: 1px solid var(--theme-color, #42b983);\n}\n\n.search input::-webkit-search-decoration,\n.search input::-webkit-search-cancel-button,\n.search input {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n.search .clear-button {\n  width: 36px;\n  text-align: right;\n  display: none;\n}\n\n.search .clear-button.show {\n  display: block;\n}\n\n.search .clear-button svg {\n  transform: scale(.5);\n}\n\n.search h2 {\n  font-size: 17px;\n  margin: 10px 0;\n}\n\n.search a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.search .matching-post {\n  border-bottom: 1px solid #eee;\n}\n\n.search .matching-post:last-child {\n  border-bottom: 0;\n}\n\n.search p {\n  font-size: 14px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n}\n\n.search p.empty {\n  text-align: center;\n}\n\n.app-name.hide, .sidebar-nav.hide {\n  display: none;\n}'
+    var code = '\n.search {\n  margin-bottom: 20px;\n  padding: 6px;\n  border-bottom: 1px solid #eee;\n}\n\n.search .input-wrap {\n  display: flex;\n  align-items: center;\n}\n\n.search .results-panel {\n  display: none;\n}\n\n.search .results-panel.show {\n  display: block;\n}\n\n.search input {\n  outline: none;\n  border: none;\n  width: 100%;\n  padding: 0 7px;\n  line-height: 36px;\n  font-size: 14px;\n  border: 1px solid transparent;\n}\n\n.search input:focus {\n  box-shadow: 0 0 5px var(--theme-color, #42b983);\n  border: 1px solid var(--theme-color, #42b983);\n}\n\n.search input::-webkit-search-decoration,\n.search input::-webkit-search-cancel-button,\n.search input {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n.search .clear-button {\n  width: 36px;\n  text-align: right;\n  display: none;\n}\n\n.search .clear-button.show {\n  display: block;\n}\n\n.search .clear-button svg {\n  transform: scale(.5);\n}\n\n.search h2 {\n  font-size: 17px;\n  margin: 10px 0;\n}\n\n.search a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.search .matching-post {\n  border-bottom: 1px solid #eee;\n}\n\n.search .matching-post:last-child {\n  border-bottom: 0;\n}\n\n.search p {\n  font-size: 14px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-line-clamp: 2;\n  -webkit-box-orient: vertical;\n}\n\n.search p.empty {\n  text-align: center;\n}\n\n.app-name.hide, .content.hide {\n  display: none;\n}'
     Docsify.dom.style(code)
   }
 
@@ -227,23 +227,22 @@
       '<div class="input-wrap">\n<input type="search" value="' + defaultValue + '" aria-label="Search text" />\n<div class="clear-button">\n        <svg width="26" height="24">\n          <circle cx="12" cy="12" r="11" fill="#ccc" />\n          <path stroke="white" stroke-width="2" d="M8.25,8.25,15.75,15.75" />\n          <path stroke="white" stroke-width="2"d="M8.25,15.75,15.75,8.25" />\n        </svg>\n      </div>\n    </div>\n    <div class="results-panel"></div>\n    </div>'
     var el = Docsify.dom.create('div', html)
     var mainsearch = Docsify.dom.find('div.mainsearch')
-    // Var aside = Docsify.dom.find('aside');
-    // var $main = Docsify.dom.find('main');
-    // var $section = Docsify.dom.find($main, 'section');
-    // var article = Docsify.dom.find('article');
+    // var aside = Docsify.dom.find('aside');
+
     Docsify.dom.toggleClass(el, 'search')
     // Docsify.dom.before(aside, el);
-    // Docsify.dom.before(article, el);
+
     mainsearch.appendChild(el)
   }
 
   function doSearch(value) {
-    debugger
+
     var $search = Docsify.dom.find('div.search')
     var $panel = Docsify.dom.find($search, '.results-panel')
     var $clearBtn = Docsify.dom.find($search, '.clear-button')
-    var $sidebarNav = Docsify.dom.find('.sidebar-nav')
-    var $appName = Docsify.dom.find('.app-name')
+    // var $sidebarNav = Docsify.dom.find('.sidebar-nav')
+    var $markdownSection = Docsify.dom.find('.content')
+    // var $appName = Docsify.dom.find('.app-name')
 
     if (!value) {
       $panel.classList.remove('show')
@@ -251,8 +250,9 @@
       $panel.innerHTML = ''
 
       if (options.hideOtherSidebarContent) {
-        $sidebarNav.classList.remove('hide')
-        $appName.classList.remove('hide')
+        // $sidebarNav.classList.remove('hide')
+        $markdownSection.classList.remove('hide')
+        // $appName.classList.remove('hide')
       }
 
       return
@@ -269,17 +269,16 @@
     $clearBtn.classList.add('show')
     $panel.innerHTML = html || ('<p class="empty">' + NO_DATA_TEXT + '</p>')
     if (options.hideOtherSidebarContent) {
-      $sidebarNav.classList.add('hide')
-      $appName.classList.add('hide')
+      // $sidebarNav.classList.add('hide')
+      $markdownSection.classList.add('hide')
+      // $appName.classList.add('hide')
     }
   }
 
   function bindEvents() {
-    debugger
     var $search = Docsify.dom.find('.search')
     var $input = Docsify.dom.find($search, 'input')
     var $inputWrap = Docsify.dom.find($search, '.input-wrap')
-
     var timeId
     // Prevent to Fold sidebar
     Docsify.dom.on(
@@ -360,7 +359,7 @@
     paths: 'auto',
     depth: 2,
     maxAge: 86400000, // 1 day
-    hideOtherSidebarContent: false,
+    hideOtherSidebarContent: true,
     namespace: undefined
   }
 
